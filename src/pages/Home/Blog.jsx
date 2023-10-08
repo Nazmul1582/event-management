@@ -2,14 +2,14 @@ import PropTypes from "prop-types";
 
 const Blog = ({ image, title, description }) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card">
       <figure>
-        <img src={image} alt="image of blog" />
+        <img className="rounded-xl" src={image} alt="image of blog" />
       </figure>
-      <div className="card-body">
+      <div className="card-body bg-base-100 px-0">
         <h2 className="card-title">{title}</h2>
-        <p>Posted on October 11, 2023</p>
-        <p>{description}</p>
+        <p className="text-gray-400">Posted on October 11, 2023</p>
+        <p className="text-sm text-gray-400">{description}</p>
       </div>
     </div>
   );

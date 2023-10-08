@@ -4,11 +4,10 @@ import Banner from "./Banner";
 
 const Home = () => {
     const allServices = useLoaderData()
-    console.log(allServices);
     return (
         <>
             <Banner />
-            <Services />
+            <Services allServices={allServices} />
         </>
     );
 };

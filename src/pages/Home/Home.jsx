@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import Services from "../../components/Services";
+import Services from "./Services";
 import Banner from "./Banner";
 
 const Home = () => {

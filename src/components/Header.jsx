@@ -25,10 +25,10 @@ const Header = () => {
   );
   return (
     <header className="bg-base-100">
-      <div className="navbar container mx-auto">
-        <div className="navbar-start">
+      <div className="navbar px-0 container mx-auto">
+        <div className="navbar-start gap-3 lg:gap-0">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label tabIndex={0} className="btn btn-warning lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -51,18 +51,18 @@ const Header = () => {
               {navLinks}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost normal-case text-xl">E-Management</Link>
+          <Link to="/" className="btn btn-warning normal-case text-xl">E-Management</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end gap-3">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <label tabIndex={0} className="btn btn-warning btn-circle avatar">
             <div className="w-10 rounded-full">
               <img src="https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-250nw-1714666150.jpg" alt="profle image" />
             </div>
           </label>
-          <Link to="/login" className="btn">Logout</Link>
+          <Link to="/login" className="btn btn-warning">Logout</Link>
         </div>
       </div>
     </header>

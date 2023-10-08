@@ -13,7 +13,7 @@ const Sponsors = () => {
         <h2 className="text-4xl text-center font-semibold mb-10">
           Our <span className="font-bold text-amber-400">Sponsors</span>
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-10">
           <Sponsor image={sponsor1} />
           <Sponsor image={sponsor2} />
           <Sponsor image={sponsor3} />

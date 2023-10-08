@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "name": "Event Planning and Strategy",
+      "image": "https://i.ibb.co/F0k6bG0/event-planning.jpg",
+      "price": 500,
+      "description": "Our Event Planning and Strategy service is the cornerstone of a successful corporate event. We go beyond the basics, providing comprehensive planning and strategic guidance to ensure your event achieves its objectives. Our expert team collaborates closely with you, helping to conceptualize your event, develop a compelling and unique theme that resonates with your audience, meticulously manage your budget to maximize resources, negotiate favorable terms with venues, create a detailed event schedule that optimizes attendee engagement, and craft a robust risk assessment and contingency plan to handle any unexpected challenges. With our commitment to precision and innovation, your event will not only meet but exceed your expectations, leaving a lasting impression on your attendees."
+    },
+    {
+      "id": 2,
+      "name": "Logistics and Operations",
+      "image": "https://i.ibb.co/0VZrCkL/logistics.jpg",
+      "price": 350,
+      "description": "Our Logistics and Operations service takes care of all the behind-the-scenes details that make your event seamless. We handle event production and setup, coordinate with vendors to ensure everything arrives on time, provide expert audio-visual and technical support, manage your event on-site with a dedicated team, and arrange transportation and accommodation for your attendees. Behind every great event is flawless logistics and operations management, and that's where our expertise shines. We take on the responsibility of event production and setup, ensuring that every element, from staging to lighting, is executed with precision. Vendor coordination is a finely tuned orchestra where we harmonize all moving parts, so you don't have to. Our audio-visual and technical support team guarantees that sound and visuals are of the highest quality. On-site, we deploy a dedicated team of professionals to manage all aspects of your event, from attendee guidance to issue resolution. Transportation and accommodation arrangements are handled with care, ensuring that your guests arrive and stay comfortably."    
+    },
+    {
+      "id": 3,
+      "name": "Registration and Ticketing",
+      "image": "https://i.ibb.co/brq08hF/registration.jpg",
+      "price": 150,
+      "description": "Simplify the registration process with our Registration and Ticketing service. We set up an easy-to-use online registration system, offer personalized attendee support, manage ticket sales and secure payment processing, and take care of badge printing and distribution, so your attendees can focus on enjoying your event. Streamline the attendee experience with our Registration and Ticketing service. Our online registration system is not just convenient; it's intuitive, allowing attendees to register with ease. Our dedicated support team is always ready to assist attendees with any inquiries. We manage ticket sales efficiently, processing payments securely and transparently. Badge printing is a breeze, and our distribution process is designed to reduce wait times and frustration. With our service, attendees can focus on engaging with your event rather than navigating administrative hassles."
+    },
+    {
+      "id": 4,
+      "name": "Content Development",
+      "image": "https://i.ibb.co/Y0LWRTJ/content.jpg",
+      "price": 200,
+      "description": "Captivate your audience with compelling content created by our experts. Our Content Development service includes crafting a captivating event agenda, coordinating with renowned speakers and presenters, and designing impactful event materials such as presentations, brochures, and eye-catching signage that leave a lasting impression. Your event's success hinges on the quality of the content it delivers, and our Content Development service ensures excellence in this regard. Our team takes the time to craft a captivating event agenda that keeps attendees enthralled, balancing information and engagement. We have a knack for identifying and securing renowned speakers and presenters who bring depth and insight to your event. Furthermore, our content creation team designs impactful materials, from visually stunning presentations that convey key messages to beautifully crafted brochures and signage that reinforce your event's branding. Every detail is considered and executed flawlessly."    
+    },
+    {
+      "id": 5,
+      "name": "Marketing and Promotion",
+      "image": "https://i.ibb.co/NTYz5nH/marketing-promotion.jpg",
+      "price": 250,
+      "description": "Get the word out about your event with our Marketing and Promotion service. We'll craft a strategic marketing plan that encompasses event branding, promotion across various channels like social media and email, targeted registration promotion efforts, and skillful public relations and media management to ensure maximum exposure and engagement. Our Marketing and Promotion service is a comprehensive strategy designed to ensure your event reaches its intended audience. We begin with meticulous event branding that encapsulates the essence and significance of your event. Our multi-channel promotion approach leverages the power of social media, email, and a dedicated event website to maximize visibility and engagement. Registration promotion efforts are targeted, ensuring that your event attracts the right audience. We employ public relations and media management strategies to secure media coverage and elevate your event's profile, making it a standout success."
+    },
+    {
+      "id": 6,
+      "name": "Food and Beverage Management",
+      "image": "https://i.ibb.co/QvztHYG/food-beverage.jpg",
+      "price": 180,
+      "description": "Cater to the culinary preferences of your attendees with our Food and Beverage Management service. We'll plan delectable menus, arrange catering services, set up bars and beverage stations, and accommodate dietary restrictions and allergies to ensure everyone enjoys a delightful dining experience.Elevate your event's culinary experience with our Food and Beverage Management service. Our expert team will curate exquisite menus tailored to your event's theme and preferences. From savory dishes to delectable desserts, we ensure that every bite delights. Our bar and beverage services offer a wide selection of refreshments and cocktails, and we accommodate dietary restrictions and allergies with precision to ensure that every guest enjoys a delightful and memorable dining experience."
+    }
+    
+]

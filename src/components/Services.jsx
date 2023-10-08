@@ -1,4 +1,6 @@
-import { BiDollar } from 'react-icons/bi'
+import { BiDollar } from 'react-icons/bi';
+import PropTypes from 'prop-types';
+
 const Services = ({allServices}) => {
   return (
     <section>
@@ -34,5 +36,9 @@ const Services = ({allServices}) => {
     </section>
   );
 };
+
+Services.propTypes = {
+  allServices: PropTypes.array
+}
 
 export default Services;

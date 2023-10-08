@@ -5,7 +5,7 @@ const Services = ({allServices}) => {
   return (
     <section>
       <div className="container mx-auto py-20">
-        <h2 className="text-2xl text-center font-semibold mb-10">
+        <h2 className="text-4xl text-center font-semibold mb-10">
           Our <span className="font-bold text-amber-400">Services</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

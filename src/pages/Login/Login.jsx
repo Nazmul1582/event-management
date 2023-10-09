@@ -1,14 +1,15 @@
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const { login } = useAuth();
-  const navigate = useNavigate();
+  const { login, loginWithGoogle } = useAuth();
+//   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -18,13 +19,27 @@ const Login = () => {
     setError("");
     login(email, password)
       .then(() => {
-        navigate("/");
+        toast.success("Logged in Successfully!")
+        // navigate("/");
       })
       .catch((err) => {
         setError(err.message);
         e.target.reset();
       });
   };
+
+  const handleLoginWithGoogle = () => {
+    loginWithGoogle()
+    .then(res => {
+        console.log(res.user);
+        toast.success("Logged in Successfully!")
+        // navigate("/")
+    })
+    .catch(err => {
+        setError(err.message)
+    })
+  }
+
   return (
     <section>
       <div className="container mx-auto">
@@ -70,11 +85,12 @@ const Login = () => {
 
           {/* login with google */}
           <div className="grid place-items-center">
-            <button className="btn btn-outline btn-warning mb-3">
+            <button onClick={handleLoginWithGoogle} className="btn btn-outline btn-warning mb-3">
               <FaGoogle className="text-2xl" />
               Login With Google
             </button>
           </div>
+          <Toaster />
           {error && <p className="text-red-500 text-center mt-3">{error}</p>}
         </div>
       </div>

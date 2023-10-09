@@ -1,14 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
   const [error, setError] = useState("")
   const [showPassword, setShowPassword] = useState(false)
   
   const { createUser, updateUser } = useAuth();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -30,7 +31,8 @@ const Register = () => {
     createUser(email, password)
       .then((res) => {
         updateUser(res.user, name);
-        navigate("/");        
+        // navigate("/");   
+        toast.success("Logged in Successfully!")     
       })
       .catch((err) => {
         setError(err.message);
@@ -86,6 +88,7 @@ const Register = () => {
               </Link>
             </p>
           </form>
+          <Toaster />
           {error && <p className="text-red-500 text-center mt-3">{error}</p>}
         </div>
       </div>

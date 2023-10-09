@@ -3,7 +3,7 @@ import useAuth from "../hooks/useAuth";
 import user from "../assets/user.png";
 
 const Header = () => {
-  const { currentUser } = useAuth();
+  const { currentUser, logOut } = useAuth();
 
   const navLinks = (
     <>
@@ -74,7 +74,7 @@ const Header = () => {
                   />
                 </div>
               </label>
-              <Link to="/login" className="btn btn-warning">
+              <Link onClick={logOut} to="/login" className="btn btn-warning">
                 Logout
               </Link>
             </>

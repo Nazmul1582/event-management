@@ -5,6 +5,8 @@ import { useState } from "react";
 
 const Login = () => {
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -39,13 +41,13 @@ const Login = () => {
             <div className="relative">
               <input
                 className="w-full border border-gray-200 p-3 rounded-lg focus:outline-0 mb-5"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Enter your password"
                 required
               />
-              <div className="absolute top-4 right-2 cursor-pointer">
-                <FaEyeSlash /> <FaEye />
+              <div onClick={() => setShowPassword(!showPassword)} className="absolute top-4 right-2 cursor-pointer">
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
               </div>
             </div>
             <button className="w-full btn btn-warning mb-5">Login</button>

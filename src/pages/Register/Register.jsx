@@ -4,8 +4,10 @@ import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 
 const Register = () => {
-  const { createUser, updateUser } = useAuth();
   const [error, setError] = useState("")
+  const [showPassword, setShowPassword] = useState(false)
+  
+  const { createUser, updateUser } = useAuth();
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -59,7 +61,7 @@ const Register = () => {
             <div className="relative">
               <input
                 className="w-full border border-gray-200 p-3 rounded-lg focus:outline-0 mb-5"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Enter your password"
                 required
@@ -70,8 +72,10 @@ const Register = () => {
                   conditions.
                 </label>
               </div>
-              <div className="absolute top-4 right-2 cursor-pointer">
-                <FaEyeSlash /> <FaEye />
+              <div onClick={() => setShowPassword(!showPassword)} className="absolute top-4 right-2 cursor-pointer">
+                {
+                  showPassword ? <FaEyeSlash /> : <FaEye />
+                }
               </div>
             </div>
             <button className="w-full btn btn-warning mb-5">Register</button>

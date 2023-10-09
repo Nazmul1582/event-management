@@ -32,7 +32,7 @@ const Register = () => {
                 placeholder="Enter your password"
                 required
               />
-              <div className="flex items-center gap-3 mb-5">
+              <div className="mb-5">
                 <label className="cursor-pointer">
                   <input type="checkbox" name="terms" />
                   {" "}Accept our terms and conditions.
@@ -45,7 +45,7 @@ const Register = () => {
             <button className="w-full btn btn-warning mb-5">Register</button>
             <p>
               Already have an account? Please{" "}
-              <Link className="text-blue-500 underline" to="/login">
+              <Link className="text-blue-500 font-bold underline" to="/login">
                 Login
               </Link>
             </p>

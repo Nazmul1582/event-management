@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+    const {name} = useContext(AuthContext)
+    console.log(name);
+    
   return (
     <section>
       <div className="container mx-auto">

@@ -1,9 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
 
 const Register = () => {
   const { createUser, updateUser } = useAuth();
+  const [error, setError] = useState("")
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -12,14 +14,25 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const terms = e.target.terms.checked;
-    console.log(name, email, password, terms);
+    
+    if(!terms){
+      setError("You have to accept our terms and conditions!")
+      return;
+    }
+    if(password.length < 6){
+      setError("Password has to be 6 characters or longer!")
+      return;
+    }
+    
+    setError("")
     createUser(email, password)
       .then((res) => {
         updateUser(res.user, name);
         navigate("/");        
       })
       .catch((err) => {
-        console.log(err.message);
+        setError(err.message);
+        e.target.reset();
       });
   };
 
@@ -69,6 +82,7 @@ const Register = () => {
               </Link>
             </p>
           </form>
+          {error && <p className="text-red-500 text-center mt-3">{error}</p>}
         </div>
       </div>
     </section>

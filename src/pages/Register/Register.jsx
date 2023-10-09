@@ -1,33 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import useAuth from '../../hooks/useAuth'
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
-  const {createUser} = useAuth()
-  
-    const handleRegister = e => {
-        e.preventDefault();
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        const terms = e.target.terms.checked;
-        console.log(name, email, password, terms);
-        createUser(email, password)
-        .then(res => {
-          console.log(res.user)
-        })
-        .catch(err => {
-          console.log(err.message)
-        })
-    }
-    
+  const { createUser, updateUser } = useAuth();
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const terms = e.target.terms.checked;
+    console.log(name, email, password, terms);
+    createUser(email, password)
+      .then((res) => {
+        updateUser(res.user, name);
+        navigate("/");        
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
   return (
     <section>
       <div className="container mx-auto">
         <div className="w-2/3 mx-auto my-20 bg-white shadow-lg p-8 rounded-lg">
-          <h2 className="text-2xl font-bold mb-5 text-center">
-            Register Now!
-          </h2>
+          <h2 className="text-2xl font-bold mb-5 text-center">Register Now!</h2>
           <form onSubmit={handleRegister}>
             <input
               className="w-full border border-gray-200 p-3 rounded-lg focus:outline-0 mb-5"
@@ -53,8 +53,8 @@ const Register = () => {
               />
               <div className="mb-5">
                 <label className="cursor-pointer">
-                  <input type="checkbox" name="terms" />
-                  {" "}Accept our terms and conditions.
+                  <input type="checkbox" name="terms" /> Accept our terms and
+                  conditions.
                 </label>
               </div>
               <div className="absolute top-4 right-2 cursor-pointer">

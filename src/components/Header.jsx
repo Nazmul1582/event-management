@@ -1,6 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+import user from "../assets/user.png";
 
 const Header = () => {
+  const { currentUser } = useAuth();
+
   const navLinks = (
     <>
       <li>
@@ -51,18 +55,34 @@ const Header = () => {
               {navLinks}
             </ul>
           </div>
-          <Link to="/" className="btn btn-warning normal-case text-xl">E-Management</Link>
+          <Link to="/" className="btn btn-warning normal-case text-xl">
+            E-Management
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end gap-3">
-          <label tabIndex={0} className="btn btn-warning btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img src="https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-250nw-1714666150.jpg" alt="profle image" />
-            </div>
-          </label>
-          <Link to="/login" className="btn btn-warning">Logout</Link>
+          {currentUser ? (
+            <>
+              <h4 className="font-semibold">{currentUser.displayName}</h4>
+              <label tabIndex={0} className="btn btn-warning btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img
+                    src={currentUser.photoURL ? currentUser.photoURL : user}
+                    alt="profle image"
+                  />
+                </div>
+              </label>
+              <Link to="/login" className="btn btn-warning">
+                Logout
+              </Link>
+            </>
+          ) : (
+            <Link to="/login" className="btn btn-warning">
+              login
+            </Link>
+          )}
         </div>
       </div>
     </header>

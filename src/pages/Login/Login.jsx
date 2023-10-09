@@ -1,13 +1,31 @@
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    
+    login(email, password)
+      .then((res) => {
+        console.log(res.user);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   return (
     <section>
       <div className="container mx-auto">
         <div className="w-2/3 mx-auto my-20 bg-white shadow-lg p-8 rounded-lg">
           <h2 className="text-2xl font-bold mb-5 text-center">Please Login!</h2>
-          <form>
+          <form onSubmit={handleLogin}>
             <input
               className="w-full border border-gray-200 p-3 rounded-lg focus:outline-0 mb-5"
               type="email"
@@ -27,10 +45,13 @@ const Login = () => {
                 <FaEyeSlash /> <FaEye />
               </div>
             </div>
-            <button className="w-full btn btn-warning mb-5">Register</button>
+            <button className="w-full btn btn-warning mb-5">Login</button>
             <p>
               If you are new, Please{" "}
-              <Link className="text-blue-500 font-bold underline" to="/register">
+              <Link
+                className="text-blue-500 font-bold underline"
+                to="/register"
+              >
                 Register
               </Link>
             </p>

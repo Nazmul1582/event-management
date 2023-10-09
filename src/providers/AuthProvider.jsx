@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -34,12 +35,17 @@ const AuthProvider = ({ children }) => {
     return updateProfile(user, { displayName: username });
   };
 
+  const login = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password)
+  }
+
   const logOut = () => {
     setLoading(true);
     return signOut(auth)
   }
 
-  const authInfo = { currentUser, loading, createUser, updateUser, logOut };
+  const authInfo = { currentUser, loading, createUser, updateUser, login, logOut };
 
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

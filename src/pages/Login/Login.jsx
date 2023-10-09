@@ -44,7 +44,7 @@ const Login = () => {
   return (
     <section>
       <div className="container mx-auto">
-        <div className="w-2/3 mx-auto my-20 bg-white shadow-lg p-8 rounded-lg">
+        <div className="w-full md:w-2/3 mx-auto my-20 bg-white shadow-lg p-8 rounded-lg">
           <h2 className="text-2xl font-bold mb-5 text-center">Please Login!</h2>
           <form onSubmit={handleLogin}>
             <input

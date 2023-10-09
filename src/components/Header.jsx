@@ -57,7 +57,7 @@ const Header = () => {
             </ul>
           </div>
           <Link to="/" className="btn btn-warning normal-case text-xl">
-            E-Management
+            EM
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -66,7 +66,7 @@ const Header = () => {
         <div className="navbar-end gap-3">
           {currentUser ? (
             <>
-              <h4 className="font-semibold">{currentUser.displayName}</h4>
+              <h4 className="font-semibold hidden md:block">{currentUser.displayName}</h4>
               <label tabIndex={0} className="btn btn-warning btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <img

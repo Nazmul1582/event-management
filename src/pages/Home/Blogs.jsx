@@ -53,7 +53,7 @@ const Blogs = () => {
         <h2 className="text-4xl text-center font-semibold mb-10">
           Our Recent <span className="font-bold text-amber-400">Blogs</span>
         </h2>
-        <div className="grid grid-cols-3 gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           <Blog image={blogPosts[0].image} title={blogPosts[0].title} description={blogPosts[0].description} />
           <Blog image={blogPosts[1].image} title={blogPosts[1].title} description={blogPosts[1].description} />
           <Blog image={blogPosts[2].image} title={blogPosts[2].title} description={blogPosts[2].description} />

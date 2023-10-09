@@ -1,8 +1,16 @@
 import { BiDollar } from 'react-icons/bi';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const Services = ({allServices}) => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <section>
       <div className="container mx-auto py-20">
@@ -12,7 +20,7 @@ const Services = ({allServices}) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {
             allServices.map(service => (
-          <div key={service.id} className="card bg-base-100 shadow-xl">
+          <div data-aos="fade-down" key={service.id} className="card bg-base-100 shadow-xl">
             <figure>
               <img className='h-60'
                 src={service.image}

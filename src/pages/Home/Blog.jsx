@@ -1,8 +1,16 @@
 import PropTypes from "prop-types";
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const Blog = ({ image, title, description }) => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
-    <div className="card">
+    <div data-aos="fade-down" className="card">
       <figure>
         <img className="rounded-xl" src={image} alt="image of blog" />
       </figure>

@@ -4,7 +4,6 @@ import useAuth from '../../hooks/useAuth'
 
 const Register = () => {
   const {createUser} = useAuth()
-  console.log(createUser);
   
     const handleRegister = e => {
         e.preventDefault();
@@ -13,6 +12,13 @@ const Register = () => {
         const password = e.target.password.value;
         const terms = e.target.terms.checked;
         console.log(name, email, password, terms);
+        createUser(email, password)
+        .then(res => {
+          console.log(res.user)
+        })
+        .catch(err => {
+          console.log(err.message)
+        })
     }
     
   return (

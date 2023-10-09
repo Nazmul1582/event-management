@@ -21,8 +21,8 @@ const Register = () => {
       setError("You have to accept our terms and conditions!")
       return;
     }
-    if(password.length < 6){
-      setError("Password has to be 6 characters or longer!")
+    if(!/^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-]).{6,}$/.test(password)){
+      setError("Password must be contains a uppercase and a special character and must be 6 characters or longer!")
       return;
     }
     

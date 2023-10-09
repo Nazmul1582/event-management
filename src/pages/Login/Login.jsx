@@ -20,6 +20,7 @@ const Login = () => {
     login(email, password)
       .then(() => {
         toast.success("Logged in Successfully!")
+        e.target.reset();
         // navigate("/");
       })
       .catch((err) => {

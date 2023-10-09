@@ -32,7 +32,8 @@ const Register = () => {
       .then((res) => {
         updateUser(res.user, name);
         // navigate("/");   
-        toast.success("Logged in Successfully!")     
+        toast.success("Logged in Successfully!")
+        e.target.reset();     
       })
       .catch((err) => {
         setError(err.message);

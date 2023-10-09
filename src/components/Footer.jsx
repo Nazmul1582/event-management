@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="p-10 bg-base-200 text-base-content">
       <div className="footer container mx-auto">
         <aside>
-        <Link to="/" className="btn btn-warning normal-case text-xl">E-Management</Link>
+        <Link to="/" className="btn btn-warning normal-case text-xl">EM</Link>
           <p>
             ACME Industries Ltd.
             <br />

@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import user from "../assets/user.png";
+import userImage from "../assets/user.png";
 
 const Header = () => {
   const { currentUser, logOut } = useAuth();
@@ -13,7 +13,7 @@ const Header = () => {
       <li>
         <NavLink to="/about">About</NavLink>
       </li>
-      {user && (
+      {currentUser && (
         <>
           <li>
             <NavLink to="/profile">Profile</NavLink>
@@ -70,7 +70,7 @@ const Header = () => {
               <label tabIndex={0} className="btn btn-warning btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <img
-                    src={currentUser.photoURL ? currentUser.photoURL : user}
+                    src={currentUser.photoURL ? currentUser.photoURL : userImage}
                     alt="profle image"
                   />
                 </div>

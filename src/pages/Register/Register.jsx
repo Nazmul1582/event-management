@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import useAuth from '../../hooks/useAuth'
 
 const Register = () => {
+  const {createUser} = useAuth()
+  console.log(createUser);
+  
     const handleRegister = e => {
         e.preventDefault();
         const name = e.target.name.value;

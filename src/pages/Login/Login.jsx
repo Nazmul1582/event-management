@@ -1,8 +1,10 @@
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
 
 const Login = () => {
+  const [error, setError] = useState("");
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -10,14 +12,15 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    
+
+    setError("");
     login(email, password)
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err.message);
+        setError(err.message);
+        e.target.reset();
       });
   };
   return (
@@ -65,11 +68,12 @@ const Login = () => {
 
           {/* login with google */}
           <div className="grid place-items-center">
-            <button className="btn btn-outline btn-warning mb-5">
+            <button className="btn btn-outline btn-warning mb-3">
               <FaGoogle className="text-2xl" />
               Login With Google
             </button>
           </div>
+          {error && <p className="text-red-500 text-center mt-3">{error}</p>}
         </div>
       </div>
     </section>

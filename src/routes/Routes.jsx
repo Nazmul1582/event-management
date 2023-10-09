@@ -9,10 +9,12 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Profile from "../pages/Profile/Profile";
 import MyEvent from "../pages/MyEvent/MyEvent";
+import NoFound from "../pages/NoFound/NoFound";
 
 const router = createBrowserRouter([
     {
         path: '/',
+        errorElement: <NoFound />,
         element: <Root></Root>, 
         children: [
             {

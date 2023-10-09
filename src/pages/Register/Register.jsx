@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
-    const {name} = useContext(AuthContext)
+    const {name} = useAuth()
     console.log(name);
     
   return (

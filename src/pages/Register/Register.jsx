@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
-    const {name} = useAuth()
-    console.log(name);
+    const handleRegister = e => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const terms = e.target.terms.checked;
+        console.log(name, email, password, terms);
+    }
     
   return (
     <section>
@@ -13,7 +18,7 @@ const Register = () => {
           <h2 className="text-2xl font-bold mb-5 text-center">
             Register Now!
           </h2>
-          <form>
+          <form onSubmit={handleRegister}>
             <input
               className="w-full border border-gray-200 p-3 rounded-lg focus:outline-0 mb-5"
               type="name"

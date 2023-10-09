@@ -1,5 +1,6 @@
 import { BiDollar } from 'react-icons/bi';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 
 const Services = ({allServices}) => {
   return (
@@ -23,7 +24,9 @@ const Services = ({allServices}) => {
               <p className='text-center text-gray-400'>{service.description.slice(0, 150)}.......</p>
               <p className='flex items-center justify-center font-semibold'>Price: <BiDollar className='text-lg' /> {service.price}</p>
               <div className="card-actions justify-center">
+                <Link to={`/services/${service.id}`}>
                 <button className="btn btn-warning">Show Details</button>
+                </Link>
               </div>
             </div>
           </div>
